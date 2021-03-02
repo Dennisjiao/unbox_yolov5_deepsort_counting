@@ -100,11 +100,12 @@ if __name__ == '__main__':
                 x1, y1, x2, y2, _, track_id = item_bbox
 
                 # 撞线检测点，(x1，y1)，y方向偏移比例 0.0~1.0
-                y1_offset = int(y1 + ((y2 - y1) * 0.6))
+                y1_offset = int(y1 + ((y2 - y1) * 0.5))
+                x1_offset = int(x1 + ((x2 - x1) * 0.5))
 
                 # 撞线的点
                 y = y1_offset
-                x = x1
+                x = x1_offset
 
                 if polygon_mask_blue_and_yellow[y, x] == 1:
                     # 如果撞 蓝polygon

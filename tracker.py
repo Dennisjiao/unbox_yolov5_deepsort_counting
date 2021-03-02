@@ -25,9 +25,8 @@ def draw_bboxes(image, bboxes, line_thickness):
         color = (0, 255, 0)
 
         # 撞线的点
-        check_point_x = x1
-        check_point_y = int(y1 + ((y2 - y1) * 0.6))
-
+        check_point_x = int(x1 + ((x2 - x1) * 0.5))
+        check_point_y = int(y1 + ((y2 - y1) * 0.5))
         c1, c2 = (x1, y1), (x2, y2)
         cv2.rectangle(image, c1, c2, color, thickness=line_thickness, lineType=cv2.LINE_AA)
 
