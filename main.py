@@ -63,7 +63,7 @@ if __name__ == '__main__':
     detector = Detector()
 
     # 打开视频
-    capture = cv2.VideoCapture('./video/test.mp4')
+    capture = cv2.VideoCapture('./video/test1.mp4')
     # capture = cv2.VideoCapture('/mnt/datasets/datasets/towncentre/TownCentreXVID.avi')
 
     while True:
@@ -84,7 +84,7 @@ if __name__ == '__main__':
 
             # 画框
             # 撞线检测点，(x1，y1)，y方向偏移比例 0.0~1.0
-            output_image_frame = tracker.draw_bboxes(im, list_bboxs, line_thickness=None)
+            output_image_frame = tracker.draw_bboxes(im, list_bboxs, line_thickness=1)
             pass
         else:
             # 如果画面中 没有bbox
@@ -196,7 +196,7 @@ if __name__ == '__main__':
         output_image_frame = cv2.putText(img=output_image_frame, text=text_draw,
                                          org=draw_text_postion,
                                          fontFace=font_draw_number,
-                                         fontScale=1, color=(255, 255, 255), thickness=2)
+                                         fontScale=1, color=(255, 255, 255), thickness=1)
 
         cv2.imshow('demo', output_image_frame)
         cv2.waitKey(1)
