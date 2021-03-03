@@ -10,7 +10,7 @@ matplotlib
 numpy
 opencv-python
 Pillow
-pkg-resources
+
 pyparsing
 python-dateutil
 pyyaml
