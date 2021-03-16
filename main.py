@@ -10,16 +10,14 @@ if __name__ == '__main__':
     mask_image_temp = np.zeros((1080, 1920), dtype=np.uint8)
 
     # 初始化2个撞线polygon
-    list_pts_blue = [[204, 305], [227, 431], [605, 522], [1101, 464], [1900, 601], [1902, 495], [1125, 379], [604, 437],
-                     [299, 375], [267, 289]]
+    list_pts_blue = [[1750,690],[200,690],[200,700],[1750,700]]
     ndarray_pts_blue = np.array(list_pts_blue, np.int32)
     polygon_blue_value_1 = cv2.fillPoly(mask_image_temp, [ndarray_pts_blue], color=1)
     polygon_blue_value_1 = polygon_blue_value_1[:, :, np.newaxis]
 
     # 填充第二个polygon
     mask_image_temp = np.zeros((1080, 1920), dtype=np.uint8)
-    list_pts_yellow = [[181, 305], [207, 442], [603, 544], [1107, 485], [1898, 625], [1893, 701], [1101, 568],
-                       [594, 637], [118, 483], [109, 303]]
+    list_pts_yellow = [[200,720],[1750,720],[1750,730],[200,730]]
     ndarray_pts_yellow = np.array(list_pts_yellow, np.int32)
     polygon_yellow_value_2 = cv2.fillPoly(mask_image_temp, [ndarray_pts_yellow], color=2)
     polygon_yellow_value_2 = polygon_yellow_value_2[:, :, np.newaxis]
