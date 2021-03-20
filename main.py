@@ -26,6 +26,7 @@ if __name__ == '__main__':
     polygon_mask_blue_and_yellow = polygon_blue_value_1 + polygon_yellow_value_2
 
     # 缩小尺寸，1920x1080->960x540
+    '''polygon_mask_blue_and_yellow = cv2.resize(polygon_mask_blue_and_yellow, (960, 540))'''
     polygon_mask_blue_and_yellow = cv2.resize(polygon_mask_blue_and_yellow, (960, 540))
 
     # 蓝 色盘 b,g,r
@@ -61,8 +62,13 @@ if __name__ == '__main__':
     detector = Detector()
 
     # 打开视频
-    capture = cv2.VideoCapture('./video/test1.mp4')
+
+    #capture = cv2.VideoCapture() or cv2.VideoCapture('.txt') or cv2.VideoCapture().startswith(
+    #    ('rtsp://', 'rtmp://', 'http://'))
+    capture = cv2.VideoCapture('./video/test3.mp4')
     # capture = cv2.VideoCapture('/mnt/datasets/datasets/towncentre/TownCentreXVID.avi')
+
+
 
     while True:
         # 读取每帧图片
@@ -201,6 +207,9 @@ if __name__ == '__main__':
 
         pass
     pass
+    print('\n')
+    print(f'(默认)自上而下车辆数为:', str(down_count))
+    print(f'(默认)自下而上车辆数为:', str(up_count))
 
     capture.release()
     cv2.destroyAllWindows()

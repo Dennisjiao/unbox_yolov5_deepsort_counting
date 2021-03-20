@@ -10,7 +10,9 @@ from utils.torch_utils import select_device
 class Detector:
 
     def __init__(self):
-        self.img_size = 640
+        #过对图片大小修改增加识别速度 defult 640
+
+        self.img_size = 320
         self.threshold = 0.3
         self.stride = 1
 
