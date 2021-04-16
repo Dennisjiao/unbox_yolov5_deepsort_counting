@@ -65,7 +65,7 @@ if __name__ == '__main__':
 
     #capture = cv2.VideoCapture() or cv2.VideoCapture('.txt') or cv2.VideoCapture().startswith(
     #    ('rtsp://', 'rtmp://', 'http://'))
-    capture = cv2.VideoCapture('./video/test3.mp4')
+    capture = cv2.VideoCapture('./video/test4.mp4')
     # capture = cv2.VideoCapture('/mnt/datasets/datasets/towncentre/TownCentreXVID.avi')
 
 
