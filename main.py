@@ -10,14 +10,14 @@ if __name__ == '__main__':
     mask_image_temp = np.zeros((1080, 1920), dtype=np.uint8)
 
     # 初始化2个撞线polygon
-    list_pts_blue = [[1750,690],[200,690],[200,700],[1750,700]]
+    list_pts_blue = [[1750,600],[200,600],[200,700],[1750,700]]
     ndarray_pts_blue = np.array(list_pts_blue, np.int32)
     polygon_blue_value_1 = cv2.fillPoly(mask_image_temp, [ndarray_pts_blue], color=1)
     polygon_blue_value_1 = polygon_blue_value_1[:, :, np.newaxis]
 
-    # 填充第二个polygon
+    # 填充第二个area
     mask_image_temp = np.zeros((1080, 1920), dtype=np.uint8)
-    list_pts_yellow = [[200,720],[1750,720],[1750,730],[200,730]]
+    list_pts_yellow = [[200,750],[1750,750],[1750,850],[200,850]]
     ndarray_pts_yellow = np.array(list_pts_yellow, np.int32)
     polygon_yellow_value_2 = cv2.fillPoly(mask_image_temp, [ndarray_pts_yellow], color=2)
     polygon_yellow_value_2 = polygon_yellow_value_2[:, :, np.newaxis]
@@ -65,8 +65,8 @@ if __name__ == '__main__':
 
     #capture = cv2.VideoCapture() or cv2.VideoCapture('.txt') or cv2.VideoCapture().startswith(
     #    ('rtsp://', 'rtmp://', 'http://'))
-    capture = cv2.VideoCapture('./video/test4.mp4')
-    # capture = cv2.VideoCapture('/mnt/datasets/datasets/towncentre/TownCentreXVID.avi')
+    capture = cv2.VideoCapture('./video/test10.mp4')
+
 
 
 
@@ -87,7 +87,7 @@ if __name__ == '__main__':
             list_bboxs = tracker.update(bboxes, im)
 
             # 画框
-            # 撞线检测点，(x1，y1)，y方向偏移比例 0.0~1.0
+
             output_image_frame = tracker.draw_bboxes(im, list_bboxs, line_thickness=1)
             pass
         else:
@@ -202,7 +202,7 @@ if __name__ == '__main__':
                                          fontFace=font_draw_number,
                                          fontScale=1, color=(255, 255, 255), thickness=1)
 
-        cv2.imshow('demo', output_image_frame)
+        cv2.imshow('Detector Test video', output_image_frame)
         cv2.waitKey(1)
 
         pass

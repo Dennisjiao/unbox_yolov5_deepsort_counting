@@ -22,9 +22,9 @@ def draw_bboxes(image, bboxes, line_thickness):
     point_radius = 4
 
     for (x1, y1, x2, y2, cls_id, pos_id) in bboxes:
-        color = (0, 255, 0)
+        color = (156, 188, 25)
 
-        # 撞线的点
+        # 撞线bbox position
         check_point_x = int(x1 + ((x2 - x1) * 0.5))
         check_point_y = int(y1 + ((y2 - y1) * 0.5))
         c1, c2 = (x1, y1), (x2, y2)
